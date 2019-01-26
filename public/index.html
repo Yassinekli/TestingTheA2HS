@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        .container{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple PWA</h1>
+        <img src="https://cdn-images-1.medium.com/max/1600/1*BSNDashSJZks1euWcyMj1w.png" alt="no image">
+    </div>
+    
+
+    <script>
+        if(navigator.serviceWorker)
+        {
+            navigator.serviceWorker.register('sw.js')
+                .then(()=> console.log('Service Worker Registered'))
+                .catch(()=> console.log('Service Worker Failed To Register'));
+        }
+
+        /*let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+        });
+        console.log(deferredPrompt);*/
+    </script>
+</body>
+</html>
